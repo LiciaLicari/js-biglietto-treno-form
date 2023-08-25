@@ -84,6 +84,7 @@ Ricordate, molte cose nella vita se fatte per la prima volta risultano difficili
 
 */
 
+/*
 //Chiedo nome, km da percorrere, età del passeggero 
 document.getElementById('generate').addEventListener('click', function(){
     const userName = document.getElementById('Name').value;
@@ -98,6 +99,13 @@ document.getElementById('generate').addEventListener('click', function(){
 let fullPrice = 0.21 * userDistance;
 console.log(fullPrice);
 
+//Definisco "minorenne" e "over65"
+const Minorenne = userAge < 18;
+    console.log(Minorenne);
+
+const Over65 = userAge > 65;
+    console.log(Over65)
+
 //if/else if/else
 if (userAge === Minorenne) {
     var total_1 = fullPrice - (fullPrice * 0.20);
@@ -110,3 +118,45 @@ if (userAge === Minorenne) {
 } else {
     console.log(fullPrice);
 }
+*/
+
+//Definisco le variabili
+const userName = document.getElementById('Name');
+const userDistance = document.getElementById('Distance');
+const userAge = document.getElementById('Age');
+const generateBtn = document.getElementById('generate-btn');
+const resetBtn = document.getElementById('reset-btn');
+
+//Stampo in console
+console.log('👉', userName, userDistance, userAge, generateBtn, resetBtn);
+
+//full price
+generateBtn.addEventListener('click', function(){
+    const userKm = Number(userDistance.value);
+    fullPrice = 0.21 * userKm;
+    fullPrice = fullPrice.toFixed(2);
+    // console.log(fullPrice);
+
+//stampo il nome del passeggero 
+let passengerName = userName.value;
+    console.log(passengerName);
+    document.querySelector('.passenger').innerHTML = passengerName;
+
+//prezzo minorenni - 20%
+let passengerAge = userAge.value;
+// console.log('passengerAge');
+if (passengerAge == 'underage') {
+        totalMin = fullPrice - (fullPrice * 0.20);
+        totalMin = totalMin.toFixed(2);
+        console.log(totalMin);
+        document.querySelector('.final-price').innerHTML = `${totalMin}€`;
+    }  else if (passengerAge == 'over65') {
+        totalOver = fullPrice - (fullPrice * 0.40);
+        totalOver = totalOver.toFixed(2);
+        console.log(totalOver);
+        document.querySelector('.final-price').innerHTML = `${totalOver}€`;
+    } else{
+        console.log(fullPrice);
+        document.querySelector('.final-price').innerHTML = `${fullPrice}€`;
+    }
+})

@@ -7,15 +7,56 @@
     <title>js Biglietto treno form</title>
 </head>
 <body>
+    <div class="container">
+        <h1 class="py-5 text-align-center">Calcola i prezzo del tuo biglietto in base a tratta ed età</h1>
+        <div id="generateTicket">
+            <div class="row py-20">
+                <div class="col-4 d-flex justify-content-center">
+                    <input class="p-1" type="text" id="Name" placeholder="Nome e cognome">
+                </div>
+                <div class="col-4 d-flex justify-content-center">
+                    <input class="p-1" type="number" id="Distance" placeholder="Distanza in km">
+                </div>
+                <div class="col-4 d-flex justify-content-center">
+                    <div>
+                        <select class="p-1" name="age" id="myAge">
+                            <option value="underage">Minorenne</option>
+                            <option value="adult">Maggiorenne</option>
+                            <option value="over65">Over 65</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <button id="generate-btn">Genera</button>
+                    <button id="reset-btn">Annulla</button>
+                </div>
+            </div>
+            
+            <h2 class="py-20 text-align-center">Il tuo biglietto 
+            </h2>
+            <div id="ticket">
+                <h3 class="uppercase ml-50">dettaglio passeggeri</h3>
+                <div class="row py-20">
+                    <div class="col-6 d-flex justify-content-center">
+                        <div class="card p-1">
+                            <h3 class="uppercase">nome passeggero</h3>
+                            <div class="passenger text-white"></div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="col">
+                           <div class="card p-1">
+                            <h4>Prezzo biglietto</h4>
+                            <div class="final-price text-white"></div>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
 
-    <h1>Calcola i prezzo del tuo biglietto in base a tratta ed età</h1>
-    <div id="generateTicket">
-        <input type="text" id="Name" value="Nome">
-        <input type="text" id="Distance" value="Distanza in km">
-        <button>Genera</button>
 
-    </div>
-    
 <script type="text/javascript" src="./assets/js/main.js"></script>
 </body>
 </html>

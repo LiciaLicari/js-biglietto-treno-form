@@ -6,9 +6,132 @@
 
 :root{
     --tt-primary: #4a7bed;
+    --tt-white: white;
+    --tt-orange: orange;
+    --tt-pink: hotpink;
+    --tt-dark: #1e1d2a;
+    ;
+
+
     
 }
 
 body{
     background-color: var(--tt-primary);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+.container{
+    max-width: 1440px;
+    width: 80%;
+    margin: auto;
+}
+
+/*Utilities*/
+
+.py-5 {
+    padding: 2.5rem 0;
+}
+
+.py-20 {
+    padding: 40px 0;
+}
+
+.p-1{
+    padding: 1rem;
+}
+
+.mt-50{
+    margin-top: 50px;
+}
+
+.ml-50{
+    margin-left: 50px;
+}
+
+.text-white{
+    color: var(--tt-white);
+}
+
+.d-flex{
+    display: flex;
+}
+
+.justify-content-center{
+    justify-content: center;
+}
+
+.align-items-center{
+    align-items: center;
+}
+
+.text-align-center{
+    text-align: center;
+}
+
+.row{
+    display: flex;
+}
+
+.col-3{
+    width: calc(100% / 12 * 3);
+}
+
+.col-4{
+    width: calc(100% / 12 * 4);
+}
+
+.col-6{
+    width: calc(100% / 12 * 6);
+}
+
+.col-8{
+    width: calc(100% / 12 * 8);
+}
+
+.uppercase{
+    text-transform: uppercase;
+}
+
+.card{
+    background-color: var(--tt-primary);
+    border-radius: 20px;
+    height: 150px;
+    width: 80%;
+}
+
+
+/*Main*/
+h1, h2{
+    color: var(--tt-white);
+    font-size: 40px;
+}
+
+h3, h4{
+    color: var(--tt-white);
+}
+
+#generateTicket, #ticket{
+    background-color: var(--tt-pink);
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 10px 10px 5px #29191d90;
+}
+
+button{
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border-radius: 10px;
+    background-color: var(--tt-white);
+    color: var(--tt-dark);
+}
+
+button:hover{
+    background-color: var(--tt-orange);
+}
+
+button:active{
+    color: var(--tt-orange);
 }
